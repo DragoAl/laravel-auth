@@ -29,8 +29,8 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo = RouteServiceProvider::HOME;
-    protected $redirectTo = '/';
+    protected $redirectTo = RouteServiceProvider::HOME;
+    //  protected $redirectTo = '/';
 
 
     /**
@@ -71,5 +71,9 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+    public function record() 
+    {
+        return view('pages.register');
     }
 }
