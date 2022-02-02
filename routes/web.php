@@ -19,11 +19,13 @@ use Illuminate\Support\Facades\Route;
 
 // Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'GuestController@home') -> name('home');
 
+Route::get('/register', 'Auth\RegisterController@record') -> name('record');
 Route::post('/register', 'Auth\RegisterController@register') -> name('register');
+Route::get('/login', 'Auth\LoginController@log') ->name('log');
 Route::post('/login', 'Auth\LoginController@login') -> name('login');
 
 Route::get('/logout', 'Auth\LoginController@logout') -> name('logout');
